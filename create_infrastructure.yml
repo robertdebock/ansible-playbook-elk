@@ -1,0 +1,21 @@
+---
+
+- name: apply terraform code
+  terraform:
+    project_path: ./terraform
+    state: present
+  register: terraform
+  notify:
+    - pause
+
+- name: add elasticseach to inventory
+  add_host:
+    name: "{{ terraform.outputs.elasticsearch.value }}"
+    groups:
+      - elasticsearch
+
+- name: add kibana to inventory
+  add_host:
+    name: "{{ terraform.outputs.kibana.value }}"
+    groups:
+      - kibana

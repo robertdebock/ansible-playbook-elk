@@ -1,0 +1,4 @@
+---
+kibana_elasticsearch_hosts:
+  # - "http://elasticsearch.meinit.nl:9200"
+  - "http://{{ groups['elasticsearch'][0] }}:9200"

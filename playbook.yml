@@ -1,0 +1,46 @@
+---
+- name: create infrastructure
+  hosts: localhost
+  gather_facts: no
+
+  tasks:
+    - name: include create_infrastructure.yml
+      include: create_infrastructure.yml
+
+  handlers:
+    - name: pause
+      pause:
+        seconds: 15
+
+- name: setup all
+  hosts: all
+  become: yes
+  gather_facts: yes
+
+  roles:
+    - role: robertdebock.bootstrap
+    - role: robertdebock.core_dependencies
+    - role: robertdebock.elastic_repo
+
+  tasks:
+    - name: install chkconfig
+      package:
+        name: chkconfig
+        state: present
+
+- name: setup elasticsearch
+  hosts: elasticsearch
+  become: yes
+  gather_facts: yes
+
+  roles:
+    - role: robertdebock.logstash
+    - role: robertdebock.elasticsearch
+
+- name: setup kibana
+  hosts: kibana
+  become: yes
+  gather_facts: yes
+
+  roles:
+    - role: robertdebock.kibana

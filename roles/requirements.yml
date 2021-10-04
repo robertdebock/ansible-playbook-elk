@@ -1,0 +1,8 @@
+---
+roles:
+  - name: robertdebock.bootstrap
+  - name: robertdebock.core_dependencies
+  - name: robertdebock.elastic_repo
+  - name: robertdebock.elasticsearch
+  - name: robertdebock.logstash
+  - name: robertdebock.kibana

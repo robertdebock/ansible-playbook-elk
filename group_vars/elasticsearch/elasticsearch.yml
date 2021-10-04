@@ -1,0 +1,7 @@
+---
+
+elasticsearch_discovery_seed_hosts:
+  - "{{ ansible_fqdn }}"
+
+elasticsearch_cluster_initial_master_nodes:
+  - "{{ ansible_fqdn }}"
