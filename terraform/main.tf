@@ -1,6 +1,6 @@
 resource "digitalocean_ssh_key" "elk" {
   name       = "vault"
-  public_key = file("${path.module}/files/id_rsa.pub")
+  public_key = file("${path.module}/../files/id_rsa.pub")
 }
 
 resource "digitalocean_droplet" "elasticsearch" {

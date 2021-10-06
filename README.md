@@ -35,6 +35,15 @@ The state of the used roles:
 ```shell
 ansible-playbook playbook.yml
 ```
+
+## Troubleshoot
+
+Login to individual hosts using this command:
+
+```shell
+ssh -i files/id_rsa root@{{ fqdn }}
+```
+
 ## Cleanup
 
 Throw away the machines.
