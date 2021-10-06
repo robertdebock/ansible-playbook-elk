@@ -44,3 +44,11 @@
 
   roles:
     - role: robertdebock.kibana
+
+- name: setup metricbeat on all hosts
+  hosts: all
+  become: yes
+  gather_facts: yes
+
+  roles:
+    - role: robertdebock.metricbeat

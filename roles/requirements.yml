@@ -6,3 +6,4 @@ roles:
   - name: robertdebock.elasticsearch
   - name: robertdebock.logstash
   - name: robertdebock.kibana
+  - name: robertdebock.metricbeat

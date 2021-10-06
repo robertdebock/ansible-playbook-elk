@@ -1,0 +1,10 @@
+---
+
+metricbeat_modules:
+  - name: system
+    state: enabled
+metricbeat_elasticsearch_hosts:
+  - "http://{{ groups['elasticsearch'][0] }}:9200"
+metricbeat_elasticsearch_username: elastic
+metricbeat_elasticsearch_password: ""
+metricbeat_kibana_host: "http://{{ groups['kibana'][0] }}:5601"
