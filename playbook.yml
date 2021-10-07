@@ -34,7 +34,7 @@
   gather_facts: yes
 
   roles:
-    - role: robertdebock.logstash
+    # - role: robertdebock.logstash
     - role: robertdebock.elasticsearch
 
 - name: setup kibana
