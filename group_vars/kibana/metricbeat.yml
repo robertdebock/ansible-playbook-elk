@@ -1,0 +1,4 @@
+---
+
+metricbeat_modules:
+  - name: kibana
